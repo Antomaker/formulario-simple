@@ -1,0 +1,7 @@
+@GetMapping("/code")
+public String code() throws IOException {
+    // Lee el archivo del classpath (funciona en IDE y en jar)
+    return new String(
+        new org.springframework.core.io.ClassPathResource("controller-code.txt").getInputStream().readAllBytes()
+    );
+}
